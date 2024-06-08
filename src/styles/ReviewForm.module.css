@@ -1,0 +1,72 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .ratingSection, .recommendSection, .praiseSection {
+    margin-bottom: 20px;
+  }
+  
+  .starRating {
+    display: flex;
+  }
+  
+  .filledStar {
+    cursor: pointer;
+    color: gold;
+    font-size: 24px;
+  }
+  
+  .emptyStar {
+    cursor: pointer;
+    color: grey;
+    font-size: 24px;
+  }
+  
+  .recommendButton {
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .recommendButton.selected {
+    background-color: green;
+    color: white;
+  }
+  
+  .recommendButton.selected {
+    background-color: red;
+    color: white;
+  }
+  
+  .textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submitButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #005bb5;
+  }
+  

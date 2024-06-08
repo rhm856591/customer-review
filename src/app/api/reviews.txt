@@ -1,0 +1,26 @@
+import clientPromise from '../../lib/mongodb';
+
+export default async function handler(req, res) {
+  console.log('Received request:', req.method);
+  const client = await clientPromise;
+  const db = client.db('reviews'); // Use your database name
+
+  if (req.method === 'POST') {
+    try {
+      const { safetyRating, communicationRating, recommend, praise } = req.body;
+      const review = { safetyRating, communicationRating, recommend, praise, createdAt: new Date() };
+
+      console.log('Inserting review:', review);
+      const result = await db.collection('reviews').insertOne(review);
+      console.log('Review inserted:', result);
+
+      res.status(201).json(result.ops[0]); // Return the inserted document
+    } catch (error) {
+      console.error('Error inserting review:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  } else {
+    res.setHeader('Allow', ['POST']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
+}
