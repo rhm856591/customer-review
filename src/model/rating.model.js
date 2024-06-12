@@ -1,3 +1,4 @@
+import mongoose from 'mongoose'
 import Mongoose from 'mongoose'
 
 const ratingSchema = new Mongoose.Schema({
@@ -19,6 +20,6 @@ const ratingSchema = new Mongoose.Schema({
     }
 })
 
-const model =  Mongoose.model('Rating', ratingSchema)
+const model = mongoose.models.Rating || Mongoose.model('Rating', ratingSchema)
 
 export default model
